@@ -34,7 +34,7 @@ const Navbar = () => {
     return (
         <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isOpen ? 'bg-transparent' : scrolled ? 'bg-white/95 backdrop-blur-md shadow-lg py-3' : 'bg-transparent py-5'
             }`}>
-            <div className={`container mx-auto px-fluid-md md:px-fluid-lg flex justify-between items-center transition-opacity duration-300 ${isOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'
+            <div className={`container mx-auto px-4 md:px-6 flex justify-between items-center transition-opacity duration-300 ${isOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'
                 }`}>
                 {/* Logo */}
                 <Link href="/" className="flex items-center gap-2 group">
@@ -55,11 +55,11 @@ const Navbar = () => {
                         <Link
                             key={link.path}
                             href={link.path}
-                            className={`text-sm font-semibold tracking-wide transition-all duration-200 hover:text-primary relative group ${router.pathname === link.path ? 'text-primary' : 'text-slate-800'
+                            className={`text-sm font-semibold tracking-wide transition-all duration-200 hover:text-renk2 relative group ${router.pathname === link.path ? 'text-renk2' : 'text-slate-800'
                                 }`}
                         >
                             {link.name}
-                            <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full ${router.pathname === link.path ? 'w-full' : ''
+                            <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-renk2 transition-all duration-300 group-hover:w-full ${router.pathname === link.path ? 'w-full' : ''
                                 }`}></span>
                         </Link>
                     ))}
@@ -67,7 +67,7 @@ const Navbar = () => {
                     {/* İletişim Butonu */}
                     <Link
                         href="/iletisim"
-                        className="bg-secondary hover:bg-primary-dark text-white px-6 py-2.5 rounded-full text-sm font-bold shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5"
+                        className="bg-renk1 hover:bg-[#015bb3] text-white px-6 py-2.5 rounded-full text-sm font-bold shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5"
                     >
                         Teklif Al
                     </Link>
@@ -75,7 +75,7 @@ const Navbar = () => {
 
                 {/* Mobil Hamburger Buton */}
                 <button
-                    className="lg:hidden text-slate-800 focus:outline-none p-2 min-w-[44px] min-h-[44px] flex items-center justify-center"
+                    className="lg:hidden text-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-renk2 focus-visible:ring-offset-2 rounded-md p-2 min-w-[44px] min-h-[44px] flex items-center justify-center"
                     onClick={() => setIsOpen(true)}
                     aria-label="Menüyü Aç"
                 >
@@ -90,7 +90,7 @@ const Navbar = () => {
                 }`}>
                 {/* h-full yerine h-[100dvh] (Dynamic Viewport Height) kullanıyoruz */}
                 <div className="flex flex-col h-[100dvh] bg-slate-50">
-                    <div className="flex items-center justify-between px-fluid-md py-6 border-b bg-white">
+                    <div className="flex items-center justify-between px-4 py-6 border-b bg-white">
                         <div className="relative w-36 h-9">
                             <Image
                                 src="/logo.svg"
@@ -110,13 +110,13 @@ const Navbar = () => {
                         </button>
                     </div>
 
-                    <div className="flex flex-col gap-1 p-fluid-md overflow-y-auto bg-slate-50 flex-1">
+                    <div className="flex flex-col gap-1 p-4 overflow-y-auto bg-slate-50 flex-1">
                         {navLinks.map((link) => (
                             <Link
                                 key={link.path}
                                 href={link.path}
                                 onClick={() => setIsOpen(false)}
-                                className={`text-xl font-bold py-5 px-2 border-b border-slate-200/50 transition-colors ${router.pathname === link.path ? 'text-primary' : 'text-slate-900 hover:text-primary'
+                                className={`text-xl font-bold py-5 px-2 border-b border-slate-200/50 transition-colors ${router.pathname === link.path ? 'text-renk2' : 'text-slate-900 hover:text-renk2'
                                     }`}
                             >
                                 {link.name}
@@ -124,12 +124,12 @@ const Navbar = () => {
                         ))}
                     </div>
 
-                    <div className="p-fluid-md bg-white border-t mt-auto shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
+                    <div className="p-4 bg-white border-t mt-auto shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
                         <p className="text-slate-500 text-sm mb-4">Mühendislik ve inşaatta güvenilir ortağınız.</p>
                         <Link
                             href="/iletisim"
                             onClick={() => setIsOpen(false)}
-                            className="block w-full text-center bg-primary text-white py-4 rounded-xl font-bold shadow-lg text-lg active:scale-95 transition-transform"
+                            className="block w-full text-center bg-renk2 text-white py-4 rounded-xl font-bold shadow-lg text-lg active:scale-95 transition-transform"
                         >
                             Teklif Alın
                         </Link>

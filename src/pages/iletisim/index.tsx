@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
-import { Mail, Phone, MapPin, Send, Linkedin, Facebook, Instagram, Youtube, Clock } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Clock } from 'lucide-react';
+import SectionTitle from '@/components/SectionTitle/SectionTitle';
 
 export default function Iletisim() {
     return (
@@ -10,16 +11,17 @@ export default function Iletisim() {
                 <meta name="description" content="Erbe Makine ve İnşaat iletişim sayfası. Bizimle iletişime geçin." />
             </Head>
 
-            <div className="bg-slate-50 min-h-screen pb-fluid-xl">
+            <div className="bg-slate-50 min-h-screen pb-12">
                 {/* Banner / Header Space */}
-                <div className="pt-28 pb-fluid-lg bg-white border-b border-slate-100 px-fluid-md">
-                    <div className="container mx-auto max-w-7xl text-center lg:text-left">
-                        <h1 className="text-3xl md:text-4xl lg:text-4xl font-extrabold text-secondary leading-tight">
-                            İletişim
-                        </h1>
-                        <p className="text-base md:text-lg text-slate-500 mt-4 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                            Sorularınız, iş birliği teklifleriniz veya talepleriniz için bize ulaşmaktan çekinmeyin.
-                        </p>
+                <div className="pt-28 pb-6 bg-white border-b border-slate-100 px-4">
+                    <div className="container mx-auto max-w-7xl">
+                        <SectionTitle
+                            variant="page"
+                            align="left"
+                            title="İletişim"
+                            subtitle="Sorularınız, iş birliği teklifleriniz veya talepleriniz için bize ulaşmaktan çekinmeyin."
+                            noMargin
+                        />
                     </div>
                 </div>
 
@@ -35,21 +37,21 @@ export default function Iletisim() {
                 </div>
 
                 {/* Form & Info Section */}
-                <div className="container mx-auto max-w-7xl px-fluid-md -mt-12 md:-mt-20 relative z-10">
+                <div className="container mx-auto max-w-7xl px-4 -mt-12 md:-mt-20 relative z-10">
                     <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
                         <div className="flex flex-col lg:flex-row">
                             {/* Left: Contact Form */}
-                            <div className="lg:w-2/3 p-fluid-lg md:p-fluid-xl">
-                                <h2 className="text-2xl md:text-3xl font-bold text-renk1 mb-fluid-md">İletişim Formu</h2>
+                            <div className="lg:w-2/3 p-6 md:p-12">
+                                <h2 className="text-2xl md:text-3xl font-bold text-renk1 mb-4">İletişim Formu</h2>
 
-                                <form className="space-y-fluid-sm md:space-y-fluid-md">
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-fluid-sm md:gap-fluid-md">
+                                <form className="space-y-2 md:space-y-4">
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
                                         <div className="space-y-2">
                                             <label className="text-sm font-semibold text-slate-700 ml-1">Adınız Soyadınız</label>
                                             <input
                                                 type="text"
                                                 placeholder="Örn: Ahmet Erbe"
-                                                className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm md:text-base"
+                                                className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-renk2/20 focus:border-renk2 transition-all text-sm md:text-base"
                                             />
                                         </div>
                                         <div className="space-y-2">
@@ -57,18 +59,18 @@ export default function Iletisim() {
                                             <input
                                                 type="email"
                                                 placeholder="Örn: ahmet@erbemakine.com"
-                                                className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm md:text-base"
+                                                className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-renk2/20 focus:border-renk2 transition-all text-sm md:text-base"
                                             />
                                         </div>
                                     </div>
 
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-fluid-sm md:gap-fluid-md">
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
                                         <div className="space-y-2">
                                             <label className="text-sm font-semibold text-slate-700 ml-1">Konu</label>
                                             <input
                                                 type="text"
                                                 placeholder="Hizmetlerimiz hakkında"
-                                                className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm md:text-base"
+                                                className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-renk2/20 focus:border-renk2 transition-all text-sm md:text-base"
                                             />
                                         </div>
                                         <div className="space-y-2">
@@ -76,7 +78,7 @@ export default function Iletisim() {
                                             <input
                                                 type="tel"
                                                 placeholder="+90 5XX XXX XX XX"
-                                                className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm md:text-base"
+                                                className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-renk2/20 focus:border-renk2 transition-all text-sm md:text-base"
                                             />
                                         </div>
                                     </div>
@@ -86,11 +88,11 @@ export default function Iletisim() {
                                         <textarea
                                             rows={5}
                                             placeholder="Size nasıl yardımcı olabiliriz?"
-                                            className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all resize-none text-sm md:text-base"
+                                            className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-renk2/20 focus:border-renk2 transition-all resize-none text-sm md:text-base"
                                         ></textarea>
                                     </div>
 
-                                    <button className="bg-primary hover:bg-primary-dark text-white px-10 py-4 rounded-xl font-bold shadow-xl transition-all hover:scale-[1.02] active:scale-95 flex items-center justify-center space-x-3 w-full md:w-auto min-h-[44px] text-base">
+                                    <button className="bg-renk2 hover:bg-[#015bb3] text-white px-10 py-4 rounded-xl font-bold shadow-xl transition-all hover:scale-[1.02] active:scale-95 flex items-center justify-center space-x-3 w-full md:w-auto min-h-[44px] text-base">
                                         <span>Gönder</span>
                                         <Send size={18} />
                                     </button>
@@ -98,14 +100,14 @@ export default function Iletisim() {
                             </div>
 
                             {/* Right: Sidebar Info */}
-                            <div className="lg:w-1/3 bg-renk1 p-fluid-lg md:p-fluid-xl text-white flex flex-col justify-between">
+                            <div className="lg:w-1/3 bg-renk1 p-6 md:p-12 text-white flex flex-col justify-between">
                                 <div>
-                                    <h2 className="text-2xl md:text-3xl font-bold mb-fluid-md">Bize Ulaşın</h2>
+                                    <h2 className="text-2xl md:text-3xl font-bold mb-4">Bize Ulaşın</h2>
 
-                                    <div className="space-y-fluid-md">
+                                    <div className="space-y-4">
                                         <div className="flex items-start space-x-5">
                                             <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0">
-                                                <MapPin size={24} className="text-primary-light" />
+                                                <MapPin size={24} className="text-white/70" />
                                             </div>
                                             <div>
                                                 <p className="text-white/60 text-xs font-bold uppercase tracking-widest mb-1">Adresimiz</p>
@@ -117,7 +119,7 @@ export default function Iletisim() {
 
                                         <div className="flex items-start space-x-5">
                                             <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0">
-                                                <Phone size={24} className="text-primary-light" />
+                                                <Phone size={24} className="text-white/70" />
                                             </div>
                                             <div>
                                                 <p className="text-white/60 text-xs font-bold uppercase tracking-widest mb-1">Telefon</p>
@@ -129,7 +131,7 @@ export default function Iletisim() {
 
                                         <div className="flex items-start space-x-5">
                                             <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0">
-                                                <Mail size={24} className="text-primary-light" />
+                                                <Mail size={24} className="text-white/70" />
                                             </div>
                                             <div>
                                                 <p className="text-white/60 text-xs font-bold uppercase tracking-widest mb-1">E-Posta</p>
@@ -141,34 +143,13 @@ export default function Iletisim() {
 
                                         <div className="flex items-start space-x-5">
                                             <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0">
-                                                <Clock size={24} className="text-primary-light" />
+                                                <Clock size={24} className="text-white/70" />
                                             </div>
                                             <div>
                                                 <p className="text-white/60 text-xs font-bold uppercase tracking-widest mb-1">Çalışma Saatleri</p>
                                                 <p className="text-base font-medium leading-relaxed">Pzt - Cmt: 08:30 - 19:00</p>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-
-                                <div className="mt-fluid-lg pt-fluid-md border-t border-white/10">
-                                    <p className="text-white/60 text-xs font-bold uppercase tracking-widest mb-4 italic">Bizi Takip Edin</p>
-                                    <div className="flex space-x-4">
-                                        {[
-                                            { icon: Linkedin, label: 'LinkedIn' },
-                                            { icon: Facebook, label: 'Facebook' },
-                                            { icon: Instagram, label: 'Instagram' },
-                                            { icon: Youtube, label: 'YouTube' }
-                                        ].map((social, i) => (
-                                            <a
-                                                key={i}
-                                                href="#"
-                                                className="w-11 h-11 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-all border border-white/5"
-                                                aria-label={social.label}
-                                            >
-                                                <social.icon size={20} />
-                                            </a>
-                                        ))}
                                     </div>
                                 </div>
                             </div>

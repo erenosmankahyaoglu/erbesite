@@ -1,26 +1,22 @@
 import React from 'react';
 import { Target, Eye } from 'lucide-react';
+import SectionTitle from '@/components/SectionTitle/SectionTitle';
 
 function MissionVision() {
     return (
-        <section className="py-fluid-xl px-fluid-md bg-slate-50">
-            {/* Başlık */}
-            <div className="text-center mb-fluid-xl">
-                <h2 className="text-3xl font-bold text-renk1 mb-3">
-                    Misyon & Vizyon
-                </h2>
-                <p className="text-slate-500 text-base">
-                    Geleceği şekillendiren değerlerimiz ve hedeflerimiz
-                </p>
-            </div>
+        <section className="py-12 px-4 bg-slate-50">
+            <SectionTitle
+                title="Misyon & Vizyon"
+                subtitle="Geleceği şekillendiren değerlerimiz ve hedeflerimiz"
+            />
 
             {/* Kartlar */}
-            <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-fluid-lg">
+            <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
 
                 {/* MİSYON Kartı */}
                 <div className="group relative flex flex-col h-full">
                     {/* Üst Renkli Alan */}
-                    <div className="w-full bg-gradient-to-br from-renk2 to-primary-dark pt-fluid-lg pb-fluid-xl flex flex-col items-center text-white relative transition-all duration-500 group-hover:shadow-xl group-hover:shadow-renk2/30 rounded-t-2xl">
+                    <div className="w-full bg-gradient-to-br from-renk2 to-[#015bb3] pt-6 pb-12 flex flex-col items-center text-white relative transition-all duration-500 group-hover:shadow-xl group-hover:shadow-renk2/30 rounded-t-2xl">
                         {/* Dekoratif daireler (Ayrı container ile overflow yönetimi) */}
                         <div className="absolute inset-0 overflow-hidden pointer-events-none">
                             <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-white/5" />
@@ -39,7 +35,7 @@ function MissionVision() {
                     <div className="w-full h-1.5 bg-renk1 z-10" />
 
                     {/* Alt Beyaz Alan */}
-                    <div className="w-full bg-white shadow-md pt-fluid-lg pb-fluid-md px-fluid-md text-center transition-all duration-500 group-hover:shadow-lg flex-1 rounded-b-2xl">
+                    <div className="w-full bg-white shadow-md pt-14 pb-4 px-4 text-center transition-all duration-500 group-hover:shadow-lg flex-1 rounded-b-2xl">
                         <p className="text-slate-600 leading-relaxed text-sm md:text-base">
                             İş ortaklarımıza en yüksek kalitede hizmet sunarak, sektörde güvenilir bir çözüm ortağı olmak.
                             Yenilikçi yaklaşımlarla sürdürülebilir büyüme sağlamak ve topluma değer katmak temel misyonumuzdur.
@@ -48,9 +44,9 @@ function MissionVision() {
                 </div>
 
                 {/* VİZYON Kartı */}
-                <div className="group relative flex flex-col h-full mt-fluid-lg md:mt-0">
+                <div className="group relative flex flex-col h-full mt-6 md:mt-0">
                     {/* Üst Renkli Alan */}
-                    <div className="w-full bg-gradient-to-br from-renk1 to-secondary pt-fluid-lg pb-fluid-xl flex flex-col items-center text-white relative transition-all duration-500 group-hover:shadow-xl group-hover:shadow-renk1/30 rounded-t-2xl">
+                    <div className="w-full bg-gradient-to-br from-renk1 to-renk1 pt-6 pb-12 flex flex-col items-center text-white relative transition-all duration-500 group-hover:shadow-xl group-hover:shadow-renk1/30 rounded-t-2xl">
                         {/* Dekoratif daireler (Ayrı container ile overflow yönetimi) */}
                         <div className="absolute inset-0 overflow-hidden pointer-events-none">
                             <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-white/5" />
@@ -69,7 +65,7 @@ function MissionVision() {
                     <div className="w-full h-1.5 bg-renk2 z-10" />
 
                     {/* Alt Beyaz Alan */}
-                    <div className="w-full bg-white shadow-md pt-fluid-lg pb-fluid-md px-fluid-md text-center transition-all duration-500 group-hover:shadow-lg flex-1 rounded-b-2xl">
+                    <div className="w-full bg-white shadow-md pt-14 pb-4 px-4 text-center transition-all duration-500 group-hover:shadow-lg flex-1 rounded-b-2xl">
                         <p className="text-slate-600 leading-relaxed text-sm md:text-base">
                             Sektörümüzde öncü ve yenilikçi bir marka olarak, ulusal ve uluslararası arenada tanınan,
                             sürdürülebilir çözümler üreten lider bir kuruluş olmayı hedefliyoruz.
