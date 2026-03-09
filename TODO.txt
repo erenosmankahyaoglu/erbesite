@@ -1,0 +1,7 @@
+// TODO
+
+1- Projelerimiz .webp imageler yüklenecek
+2- SEO için sitemap-robots-meta taglar eklenecek
+3- Mail gönderimi için api hazırlanacak
+4- Domain ve Hosting Vercel'e bağlanacak
+5- Mail gönderimi için şablon ayarlanacak.
