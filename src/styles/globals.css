@@ -1,31 +1,30 @@
 @import "tailwindcss";
 
 @theme {
-    /* Kullanıcı Özel Renkleri */
-    --color-renk1: #013186;
-    /* Örnek Açık Mavi */
-    --color-renk2: #0171de;
-    /* Örnek Koyu Mavi */
+  /* Kullanıcı Özel Renkleri */
+  --color-renk1: #013186;
+  /* Örnek Açık Mavi */
+  --color-renk2: #0171de;
+  /* Örnek Koyu Mavi */
 }
 
 @layer base {
-    body {
-        background-color: theme('colors.slate.50');
-        color: theme('colors.slate.900');
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-    }
+  body {
+    background-color: theme("colors.slate.50");
+    color: theme("colors.slate.900");
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }
 
 /* Kullanıcı hareket azaltma tercihini destekle (WCAG) */
 @media (prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
