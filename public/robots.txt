@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.erbemakine.com
+
+# Sitemaps
+Sitemap: https://www.erbemakine.com/sitemap.xml

@@ -1,7 +1,10 @@
 import React from "react";
 import Head from "next/head";
+import { generateNextSeo } from "next-seo/pages";
 import Image from "next/image";
 import SectionTitle from "@/components/SectionTitle/SectionTitle";
+
+const SITE_URL = "https://www.erbemakine.com";
 import {
   PencilRuler,
   Calculator,
@@ -56,23 +59,18 @@ const Hizmetlerimiz = () => {
   return (
     <div className="min-h-screen bg-[#f4f7f9] pt-20 pb-12">
       <Head>
-        <title>Hizmetlerimiz | Erbe Makine ve İnşaat</title>
-        <meta
-          name="description"
-          content="Erbe Makine ve İnşaat uzmanlık alanları ve sunduğumuz mühendislik çözümleri."
-        />
+        {generateNextSeo({
+          title: "Hizmetlerimiz",
+          description:
+            "Erbe Makine ve İnşaat'ın mühendislik, proje yönetimi, anahtar teslim uygulama ve daha fazlası dahil bütüncül hizmet kapsamını keşfedin.",
+          canonical: `${SITE_URL}/hizmetlerimiz`,
+        })}
       </Head>
 
       {/* Hero Section */}
       <section className="relative h-[350px] md:h-[450px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-[#013186]">
-          <Image
-            src="https://images.unsplash.com/photo-1541888086425-d81bb192a0f5?auto=format&fit=crop&q=80"
-            alt="Erbe Hizmetlerimiz"
-            fill
-            className="object-cover opacity-40 mix-blend-overlay grayscale-[20%]"
-            priority
-          />
+          {/* Background image removed due to 404 error */}
         </div>
         <div className="relative z-10 bg-white/95 backdrop-blur-md px-4 py-6 md:px-20 rounded-[30px] md:rounded-[40px] shadow-2xl max-w-5xl text-center mx-6">
           <SectionTitle

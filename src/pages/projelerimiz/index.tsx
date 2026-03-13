@@ -1,5 +1,8 @@
 import React from "react";
 import Head from "next/head";
+import { generateNextSeo } from "next-seo/pages";
+
+const SITE_URL = "https://www.erbemakine.com";
 import Link from "next/link";
 import {
   Factory,
@@ -69,8 +72,8 @@ const projectCategories = [
 ];
 
 const stats = [
-  { value: "50+", label: "Tamamlanan Proje" },
-  { value: "15+", label: "Yıllık Deneyim" },
+  { value: "40+", label: "Tamamlanan Proje" },
+  { value: "10+", label: "Yıllık Deneyim" },
   { value: "30+", label: "Uzman Kadro" },
   { value: "4", label: "Faaliyet Alanı" },
 ];
@@ -79,11 +82,12 @@ const ProjelerimizPage = () => {
   return (
     <>
       <Head>
-        <title>Projelerimiz | Erbe Makine ve İnşaat</title>
-        <meta
-          name="description"
-          content="Erbe Makine ve İnşaat'ın başarıyla tamamladığı endüstriyel projeler ve faaliyet alanları."
-        />
+        {generateNextSeo({
+          title: "Projelerimiz",
+          description:
+            "Termik santral revizyonları, endüstriyel yapılar, mekanik borulama ve altyapı projelerinde 50'den fazla başarılı proje deneyimi.",
+          canonical: `${SITE_URL}/projelerimiz`,
+        })}
       </Head>
 
       <div className="bg-slate-50 min-h-screen">

@@ -1,4 +1,6 @@
 import React from "react";
+import Head from "next/head";
+import { generateNextSeo } from "next-seo/pages";
 import Services from "@/components/Services/Services";
 import MissionVision from "@/components/Misyon/Misyon";
 import Projelerimiz from "@/components/Projelerimiz/Projelerimiz";
@@ -6,9 +8,18 @@ import Image from "next/image";
 import Link from "next/link";
 import SectionTitle from "@/components/SectionTitle/SectionTitle";
 
+const SITE_URL = "https://www.erbemakine.com";
+
 export default function Home() {
   return (
     <>
+      <Head>
+        {generateNextSeo({
+          description:
+            "Erbe Makine ve İnşaat olarak ağır sanayi sektöründe güvenilir çözümler ve profesyonel mühendislik hizmetleri sunuyoruz.",
+          canonical: SITE_URL,
+        })}
+      </Head>
       <section className="min-h-screen flex items-center bg-slate-50 pt-28 lg:pt-20">
         <div className="container mx-auto px-4 lg:px-6 grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
           <div className="space-y-4 text-center lg:text-left">

@@ -1,8 +1,11 @@
 import React from "react";
 import Head from "next/head";
+import { generateNextSeo } from "next-seo/pages";
 import Image from "next/image";
 import { Shield, Target, Users, Award } from "lucide-react";
 import SectionTitle from "@/components/SectionTitle/SectionTitle";
+
+const SITE_URL = "https://www.erbemakine.com";
 
 const values = [
   {
@@ -31,11 +34,12 @@ export default function Hakkimizda() {
   return (
     <>
       <Head>
-        <title>Hakkımızda | Erbe Makine ve İnşaat</title>
-        <meta
-          name="description"
-          content="Erbe Makine ve İnşaat hakkında detaylı bilgi. Biz kimiz, ne yapıyoruz?"
-        />
+        {generateNextSeo({
+          title: "Hakkımızda",
+          description:
+            "Erbe Makine ve İnşaat hakkında detaylı bilgi. Ağır sanayi ve mühendislik alanında yılların deneyimiyle faaliyet gösteren uzman kadromuzla tanışın.",
+          canonical: `${SITE_URL}/hakkimizda`,
+        })}
       </Head>
 
       <div className="bg-slate-50 min-h-screen">
