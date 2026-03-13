@@ -43,23 +43,21 @@ export default async function handler(
     const transporter = nodemailer.createTransport({
       host,
       port,
-      secure: port === 465, // 465 için true, 587 için false olmalı
+      secure: false, 
       auth: {
         user,
         pass,
       },
-      // Bazı sunucular PLAIN yerine LOGIN methodunu zorunlu tutar
       authMethod: 'LOGIN',
       tls: {
         rejectUnauthorized: false,
-        // Bazı sunucular eski şifreleme yöntemlerini (SSLv3 vb.) dahi isteyebiliyor
-        minVersion: 'TLSv1'
+        ignoreTLS: true 
       },
       debug: true,
       logger: true,
       connectionTimeout: 20000,
       greetingTimeout: 10000,
-    });
+    } as any);
 
     const emailHtml = generateContactEmailTemplate({
       name,
