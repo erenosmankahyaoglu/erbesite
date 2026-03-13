@@ -27,10 +27,10 @@ export default async function handler(
   }
 
   try {
-    const host = process.env.EMAIL_HOST;
-    const port = Number(process.env.EMAIL_PORT);
-    const user = process.env.EMAIL_USER;
-    const pass = process.env.EMAIL_PASSWORD;
+    const host = process.env.EMAIL_HOST?.replace(/['"]/g, "");
+    const port = Number(process.env.EMAIL_PORT?.replace(/['"]/g, ""));
+    const user = process.env.EMAIL_USER?.replace(/['"]/g, "");
+    const pass = process.env.EMAIL_PASSWORD?.replace(/['"]/g, "");
 
     if (!host || !port || !user || !pass) {
       console.error("Missing email configuration environment variables");
@@ -43,15 +43,18 @@ export default async function handler(
     const transporter = nodemailer.createTransport({
       host,
       port,
-      secure: port === 465, // 465 SSL için true, 587 TLS için genellikle false (veya starttls kullanır)
+      secure: port === 465,
       auth: {
         user,
         pass,
       },
-      // Bağlantı zaman aşımı ve hata detayları için ek ayarlar
-      connectionTimeout: 10000,
-      greetingTimeout: 5000,
-      socketTimeout: 10000,
+      tls: {
+        // Bazı sunucularda sertifika doğrulaması 535 hatasına dolaylı sebep olabilir
+        rejectUnauthorized: false
+      },
+      debug: true, // Daha detaylı log için
+      logger: true, // Nodemailer loglarını terminale basar
+      connectionTimeout: 15000,
     });
 
     const emailHtml = generateContactEmailTemplate({
@@ -64,10 +67,10 @@ export default async function handler(
 
     // E-posta gönderimi
     await transporter.sendMail({
-      from: `"${name}" <${user}>`, // Gönderen
-      to: "info@erbemakine.com", // Alıcı (Şirket maili)
-      replyTo: email, // Kullanıcının e-postası (Cevapla dendiğinde ona gitsin)
-      subject: subject || "Yeni İletişim Formu Mesajı",
+      from: user, // Gönderen kısmını sadeleştirelim, isim bazen auth'u bozar
+      to: "info@erbemakine.com",
+      replyTo: email,
+      subject: subject || `${name} - Yeni İletişim Formu`,
       html: emailHtml,
     });
 
