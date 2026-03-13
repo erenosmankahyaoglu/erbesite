@@ -43,18 +43,22 @@ export default async function handler(
     const transporter = nodemailer.createTransport({
       host,
       port,
-      secure: port === 465,
+      secure: port === 465, // 465 için true, 587 için false olmalı
       auth: {
         user,
         pass,
       },
+      // Bazı sunucular PLAIN yerine LOGIN methodunu zorunlu tutar
+      authMethod: 'LOGIN',
       tls: {
-        // Bazı sunucularda sertifika doğrulaması 535 hatasına dolaylı sebep olabilir
-        rejectUnauthorized: false
+        rejectUnauthorized: false,
+        // Bazı sunucular eski şifreleme yöntemlerini (SSLv3 vb.) dahi isteyebiliyor
+        minVersion: 'TLSv1'
       },
-      debug: true, // Daha detaylı log için
-      logger: true, // Nodemailer loglarını terminale basar
-      connectionTimeout: 15000,
+      debug: true,
+      logger: true,
+      connectionTimeout: 20000,
+      greetingTimeout: 10000,
     });
 
     const emailHtml = generateContactEmailTemplate({
